@@ -39,24 +39,22 @@
 //     return 0;
 // }
 
-// 대면 실습 05
+// 대면 실습 06
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int main(void)
 {
-    unsigned int x;
-    int b;
+    int seconds;
+    int hours, minutes, remain;
 
-    printf("input a number : ");
-    scanf("%u", &x);
+    printf("Input the second : ");
+    scanf("%d", &seconds);
 
-    for (b = 0; x != 0; x >>= 1) {
-        if (x & 1) {
-            b++;
-        }
-    }
+    hours = seconds / 3600;    // 전체 초를 3600으로 나눈 몫 → 시간
+    minutes = (seconds % 3600) / 60;  // 나머지를 60으로 나눈 몫 → 분
+    remain  = seconds % 60;   // 전체 초를 60으로 나눈 나머지 → 초
 
-    printf("The result is : %i\n", b);
+    printf("The time for %d seconds is %d : %d : %d\n", seconds, hours, minutes, remain);
 
     return 0;
 }
