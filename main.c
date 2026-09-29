@@ -39,20 +39,24 @@
 //     return 0;
 // }
 
-// 대면 실습 04
+// 대면 실습 05
 #include <stdio.h>
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    int year;
+    unsigned int x;
+    int b;
 
-    printf("Enter the year: ");
-    scanf("%d", &year);
+    printf("input a number : ");
+    scanf("%u", &x);
 
-    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-        printf("%d is a leap year.\n", year);
-    else
-        printf("%d is not a leap year.\n", year);
+    for (b = 0; x != 0; x >>= 1) {
+        if (x & 1) {
+            b++;
+        }
+    }
+
+    printf("The result is : %i\n", b);
 
     return 0;
 }
