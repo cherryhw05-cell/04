@@ -39,21 +39,20 @@
 //     return 0;
 // }
 
-// 대면 실습 03
+// 대면 실습 04
 #include <stdio.h>
 
 int main(void)
 {
-    int seconds;
-    int minutes, remain;
+    int year;
 
-    printf("Input the second : ");
-    scanf("%d", &seconds);
+    printf("Enter the year: ");
+    scanf("%d", &year);
 
-    minutes = seconds / 60;   // 전체 초를 60으로 나눈 몫 → 분
-    remain  = seconds % 60;   // 전체 초를 60으로 나눈 나머지 → 초
-
-    printf("the time is %d : %d\n", minutes, remain);
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        printf("%d is a leap year.\n", year);
+    else
+        printf("%d is not a leap year.\n", year);
 
     return 0;
 }
