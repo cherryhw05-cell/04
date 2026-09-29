@@ -39,21 +39,21 @@
 //     return 0;
 // }
 
-// 대면 실습 02
+// 대면 실습 03
 #include <stdio.h>
 
 int main(void)
 {
-    int a, b;
+    int seconds;
+    int minutes, remain;
 
-    printf("두 개의 정수를 입력하세요 : ");
-    scanf("%i %i", &a, &b);
+    printf("Input the second : ");
+    scanf("%d", &seconds);
 
-    printf("%i + %i = %i\n", a, b, a + b);
-    printf("%i - %i = %i\n", a, b, a - b);
-    printf("%i * %i = %i\n", a, b, a * b);
-    printf("%i / %i = %i\n", a, b, a / b);
-    printf("%i %% %i = %i\n", a, b, a % b);
+    minutes = seconds / 60;   // 전체 초를 60으로 나눈 몫 → 분
+    remain  = seconds % 60;   // 전체 초를 60으로 나눈 나머지 → 초
+
+    printf("the time is %d : %d\n", minutes, remain);
 
     return 0;
 }
